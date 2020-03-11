@@ -12,7 +12,6 @@ GOOS=linux GOARH=arm go build -o meuappraspberry -v
 */
 
 func main() {
-	teste := model.Imovel
 	casa := model.Imovel{}
 	casa.Nome = "Casa da Lucy"
 	casa.X = 17
@@ -24,3 +23,4 @@ func main() {
 	objJSON, _ := json.Marshal(casa)
 	fmt.Println("A casa em JSON: ", string(objJSON))
 }
+q
