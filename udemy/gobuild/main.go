@@ -23,4 +23,3 @@ func main() {
 	objJSON, _ := json.Marshal(casa)
 	fmt.Println("A casa em JSON: ", string(objJSON))
 }
-q
