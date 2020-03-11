@@ -13,7 +13,7 @@ import (
 func main() {
 	arquivo, err := os.Open("cidades.csv")
 	if err != nil {
-		fmt.Println("Houve um erro ao abrir o arquivo. Erro: ", err.Error)
+		fmt.Printf("Houve um erro ao abrir o arquivo. Erro: %T", err.Error)
 		return
 	}
 	defer arquivo.Close()
@@ -27,11 +27,11 @@ func main() {
 
 	arquivoJSON, err := os.Create("cidades.json")
 	if err != nil {
-		fmt.Println("[main] Houve um erro ao criar o arquivo JSON. Erro: ", err.Error)
+		fmt.Printf("[main] Houve um erro ao criar o arquivo JSON. Erro: %T", err.Error)
 		return
 	}
 
-	def arquivoJSON.Close()
+	defer arquivoJSON.Close()
 
 	escritor := bufio.NewWriter(arquivoJSON)
 	escritor.WriteString("[\r\n")
@@ -45,7 +45,7 @@ func main() {
 			fmt.Printf("Cidade: %+v \r\n", cidade)
 			cidadeJSON, err := json.Marshal(cidade)
 			if err != nil {
-				fmt.Println("[main] Houve um erro ao gerar o json do item ", item, ". Erro: ", err.Error)
+				fmt.Printf("[main] Houve um erro ao gerar o json do item %s. Erro: %T", item, err.Error)
 				return
 			}
 			escritor.WriteString("  " + string(cidadeJSON))
