@@ -86,3 +86,4 @@ fabric.properties
 /conf/service_status.txt
 *.csv
 *.CSV
+.history

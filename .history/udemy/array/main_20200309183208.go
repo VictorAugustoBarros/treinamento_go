@@ -15,7 +15,4 @@ func main() {
 
 	capitais := [...]string{"Lisboa", "Brasilia", "Luanda", "Maputo"}
 	fmt.Println("Qual a capacidade desse array?", len(capitais))
-	for index, cidade := range capitais {
-		fmt.Printf("Capital[%d] é %s \n", index, cidade)
-	}
 }
